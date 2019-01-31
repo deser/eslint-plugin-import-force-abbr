@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-import-force-abbr",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Forces to import specific modules into specific variable names (practically abbreviations). ",
   "keywords": [
     "eslint",
