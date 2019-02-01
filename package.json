@@ -10,6 +10,7 @@
   "author": "Aliaksei Petrachenkau",
   "main": "lib/index.js",
   "scripts": {
+    "lint": "eslint lib/",
     "test": "mocha tests --recursive"
   },
   "repository": {
@@ -20,7 +21,9 @@
     "requireindex": "~1.2.0"
   },
   "devDependencies": {
-    "eslint": "~5.12.1",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
     "mocha": "^5.2.0"
   },
   "engines": {
