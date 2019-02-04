@@ -3,14 +3,16 @@
 Usage example:
 ```
 'import-force-abbr/abbr': [2, {cases: [{
-        moduleNameSubstr: '/FieldTypes',
+        moduleNameSubstr: 'FieldTypes',
         expectedVariableName: 'ft'
     },{
-        moduleNameSubstr: '/PropertyTypes',
+        moduleNameSubstr: 'PropertyTypes',
         expectedVariableName: 'pt'
     }] }
 ]
 ```
+
+<b>Please make sure that module name contains just file name (without or with extension) and include nothing else</b> 
 
 
 ## Rule Details
@@ -45,10 +47,10 @@ type: Array of objects
 example: 
 ```
 [{
-    moduleNameSubstr: '/FieldTypes',
+    moduleNameSubstr: 'FieldTypes',
     expectedVariableName: 'ft'
 },{
-    moduleNameSubstr: '/PropertyTypes',
+    moduleNameSubstr: 'PropertyTypes',
     expectedVariableName: 'pt'
 }]
 ```
