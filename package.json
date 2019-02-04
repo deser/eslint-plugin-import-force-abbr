@@ -17,9 +17,7 @@
     "type": "git",
     "url": "https://github.com/deser/eslint-plugin-import-force-abbr.git"
   },
-  "dependencies": {
-    "requireindex": "~1.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
