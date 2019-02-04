@@ -58,6 +58,7 @@ ruleTester.run('abbr', rule, {
       message: 'It\'s expected that module with name FieldTypes is imported with appropriate name: "ft"',
       type: 'ImportDeclaration',
     }],
+    output: "import ft from 'FieldTypes.js';  const ft = require('FieldTypes');",
   },
   {
     code: "import zxczxc from '../FieldTypes.js'; import zxcwecw from '../PropertyTypes.js';  const ft = require('xxx');",
@@ -73,6 +74,7 @@ ruleTester.run('abbr', rule, {
       message: 'It\'s expected that module with name PropertyTypes is imported with appropriate name: "pt"',
       type: 'ImportDeclaration',
     }],
+    output: "import ft from '../FieldTypes.js'; import pt from '../PropertyTypes.js';  const ft = require('xxx');",
   },
   {
     code: "import * as sssss from 'FieldTypes';",
@@ -85,6 +87,7 @@ ruleTester.run('abbr', rule, {
       message: 'It\'s expected that module with name FieldTypes is imported with appropriate name: "ft"',
       type: 'ImportDeclaration',
     }],
+    output: "import * as ft from 'FieldTypes';",
   },
   ],
 });
