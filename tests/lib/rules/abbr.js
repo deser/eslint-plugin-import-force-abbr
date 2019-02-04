@@ -38,6 +38,13 @@ ruleTester.run('abbr', rule, {
       ecmaVersion: 6,
     },
     options: [{ cases: [{ moduleNameSubstr: 'FieldTypes', expectedVariableName: 'ft' }] }],
+  }, {
+    code: "// Should pass as FieldTypes is not a module but just subpath \n import * as sssss from 'FieldTypes/IamAModule'; \n import * as sssss2 from 'hello/FieldTypes.js/IamAModule'; import * as sssss3 from 'hello/FieldTypes/IamAModule';",
+    parserOptions: {
+      sourceType: 'module',
+      ecmaVersion: 6,
+    },
+    options: [{ cases: [{ moduleNameSubstr: 'FieldTypes', expectedVariableName: 'ft' }] }],
   }],
 
   invalid: [{
