@@ -48,7 +48,7 @@ ruleTester.run('abbr', rule, {
   }],
 
   invalid: [{
-    code: "import FileTypes from 'FieldTypes.js';  const ft = require('FieldTypes');",
+    code: "import FileTypes from 'FieldTypes.js';  const pt = require('PropTypes');",
     options: [{ cases: [{ moduleNameSubstr: 'FieldTypes', expectedVariableName: 'ft' }] }],
     parserOptions: {
       sourceType: 'module',
@@ -58,10 +58,10 @@ ruleTester.run('abbr', rule, {
       message: 'It\'s expected that module with name FieldTypes is imported with appropriate name: "ft"',
       type: 'ImportDeclaration',
     }],
-    output: "import ft from 'FieldTypes.js';  const ft = require('FieldTypes');",
+    output: "import ft from 'FieldTypes.js';  const pt = require('PropTypes');",
   },
   {
-    code: "import zxczxc from '../FieldTypes.js'; import zxcwecw from '../PropertyTypes.js';  const ft = require('xxx');",
+    code: "import zxczxc from '../FieldTypes.js'; import zxcwecw from '../PropertyTypes.js';  const xxx = require('xxx');",
     options: [{ cases: [{ moduleNameSubstr: 'FieldTypes', expectedVariableName: 'ft' }, { moduleNameSubstr: 'PropertyTypes', expectedVariableName: 'pt' }] }],
     parserOptions: {
       sourceType: 'module',
@@ -74,7 +74,7 @@ ruleTester.run('abbr', rule, {
       message: 'It\'s expected that module with name PropertyTypes is imported with appropriate name: "pt"',
       type: 'ImportDeclaration',
     }],
-    output: "import ft from '../FieldTypes.js'; import pt from '../PropertyTypes.js';  const ft = require('xxx');",
+    output: "import ft from '../FieldTypes.js'; import pt from '../PropertyTypes.js';  const xxx = require('xxx');",
   },
   {
     code: "import * as sssss from 'FieldTypes';",
