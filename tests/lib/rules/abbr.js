@@ -58,23 +58,21 @@ ruleTester.run('abbr', rule, {
       message: 'It\'s expected that module with name FieldTypes is imported with appropriate name: "ft"',
       type: 'ImportDeclaration',
     }],
-    output: "import ft from 'FieldTypes.js';  const pt = require('PropTypes');",
   },
   {
-    code: "import zxczxc from '../FieldTypes.js'; import zxcwecw from '../PropertyTypes.js';  const xxx = require('xxx');",
+    code: "import _ from 'lodash'; import zxcwecw from '../PropertyTypes.js'; import zxczxc from '../FieldTypes.js';   const xxx = require('xxx');",
     options: [{ cases: [{ moduleNameSubstr: 'FieldTypes', expectedVariableName: 'ft' }, { moduleNameSubstr: 'PropertyTypes', expectedVariableName: 'pt' }] }],
     parserOptions: {
       sourceType: 'module',
       ecmaVersion: 6,
     },
     errors: [{
-      message: 'It\'s expected that module with name FieldTypes is imported with appropriate name: "ft"',
-      type: 'ImportDeclaration',
-    }, {
       message: 'It\'s expected that module with name PropertyTypes is imported with appropriate name: "pt"',
       type: 'ImportDeclaration',
+    }, {
+      message: 'It\'s expected that module with name FieldTypes is imported with appropriate name: "ft"',
+      type: 'ImportDeclaration',
     }],
-    output: "import ft from '../FieldTypes.js'; import pt from '../PropertyTypes.js';  const xxx = require('xxx');",
   },
   {
     code: "import * as sssss from 'FieldTypes';",
@@ -87,7 +85,6 @@ ruleTester.run('abbr', rule, {
       message: 'It\'s expected that module with name FieldTypes is imported with appropriate name: "ft"',
       type: 'ImportDeclaration',
     }],
-    output: "import * as ft from 'FieldTypes';",
   },
   ],
 });
